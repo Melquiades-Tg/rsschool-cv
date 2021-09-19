@@ -54,7 +54,7 @@ body {
     display: flex;
     padding: 30px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: right;
     min-width: 50px;
 }
 .heder_menu menu {
@@ -66,7 +66,7 @@ body {
 
 }
 .menu_list {
-
+  
 }
 .menu_list > li {
     position: relative;
@@ -100,6 +100,7 @@ body {
 }
 .about__me {
     background-color: rgb(79, 96, 194);
+    display: flex;
 }
 .education {
     background-color: rgba(121, 189, 174, 0.952);
@@ -128,4 +129,43 @@ body {
     font-size: 16px;
     margin: 0px 0px 20px 0px;
     line-height: 150%;
+}
+/* burger*/
+
+@media (max-width: 767px) {
+    .menu_icon {
+        opacity: 0;
+        z-index: 100;
+    }
+    .menu_btn {
+        position: relative;
+       z-index: 100; 
+    }
+        .menu_body {
+            position: fixed;
+            top: 0;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-100%, 0px);
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 15px 30px 30px 30px;
+            transition: all 0.3s ease 0s;
+            overflow: scroll;
+        }
+        .menu_icon:checked + .menu_body {
+            transform: translate(0px, 0px);
+        }
+        .menu_list > li {
+            margin: 0px 0px 30px 0px;   
+       }
+       .menu_link {
+           font-size: 20px;
+       }
+}
+@media (min-width: 767px) {
+    .menu_btn, .menu_icon {
+        display: none;
+
+    }
 }
